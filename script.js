@@ -1,3 +1,21 @@
+
+
+function toggleMenu() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+// Close the dropdown if clicked outside
+window.onclick = function(event) {
+    if (!event.target.matches('.menu-icon') && !event.target.matches('.close-btn')) {
+        let dropdown = document.getElementById("dropdownMenu");
+        if (dropdown.classList.contains("show")) {
+            dropdown.classList.remove("show");
+        }
+    }
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // GSAP Navbar Animation (Fade-in from the top)
     gsap.from(".navbar", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
